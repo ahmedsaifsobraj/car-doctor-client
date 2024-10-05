@@ -1,10 +1,10 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg' ;
-import { useContext } from 'react';
-import { AuthContext } from '../../Providers/AuthProvider/AuthProvider';
+
 import axios from 'axios';
+import UseAuth from '../../hooks/useAuth';
 const Login = () => {
-    const {signIn}=useContext(AuthContext);
+    const {signIn}=UseAuth();
     const location = useLocation();
     const navigate = useNavigate();
     const handleLogIn=e=>{
@@ -18,7 +18,7 @@ const Login = () => {
             const userLogged = res.user;
             console.log(userLogged);
             const user={email};
-            axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
+            axios.post('https://car-doctor-server-pearl-five.vercel.app/jwt',user)
             .then(res => {
                 console.log(res.data);
                 if(res.data.success){

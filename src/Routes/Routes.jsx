@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
         {
           path:'/bookings/:id',
           element:<PrivateRoutes><BookingServices></BookingServices></PrivateRoutes>,
-          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+          loader:({params})=>fetch(`https://car-doctor-server-pearl-five.vercel.app/services/${params.id}`)
         },
         {
           path:'/booking',
