@@ -2,7 +2,7 @@ import React from 'react';
 
 const BookingRow = ({ booking,handleDelete }) => {
     const { img, service, date, _id, price } = booking;
-    console.log(booking);
+    // console.log(booking);
     
     return (
         <tr>

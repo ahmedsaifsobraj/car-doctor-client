@@ -21,7 +21,7 @@ const BookingServices  = () => {
             service_id:_id,
             price:price
         }
-        console.log(booking);
+        // console.log(booking);
         fetch('https://car-doctor-server-pearl-five.vercel.app/bookings',{
             method:'POST',
             headers:{
@@ -31,7 +31,7 @@ const BookingServices  = () => {
         })
         .then(res =>res.json())
         .then(data =>{
-           console.log(data);
+        //    console.log(data);
            if(data.insertedId>1){
             alert('Order Successfull')
            }
